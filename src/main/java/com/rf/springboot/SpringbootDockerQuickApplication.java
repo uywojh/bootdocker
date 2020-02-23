@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringbootHelloQuickApplication {
+public class SpringbootDockerQuickApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootHelloQuickApplication.class, args);
+        SpringApplication.run(SpringbootDockerQuickApplication.class, args);
     }
 
 }
