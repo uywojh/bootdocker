@@ -20,4 +20,4 @@ then
     /usr/bin/docker rm "$word"
 fi
  mvn clean package -P spring-boot docker:build
- run -p 8761:8761 -d --name "$appName" "$appName":latest
+ docker run -p 8761:8761 -d --name "$appName" "$appName":latest
