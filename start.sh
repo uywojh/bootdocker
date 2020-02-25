@@ -1,4 +1,4 @@
-appName="jenkins-demo"
+appName="springboot-docker-quick"
 word="1"
 echo "$word"
 word=`docker ps -a -q --no-trunc --filter name=^/"$appName"$`
