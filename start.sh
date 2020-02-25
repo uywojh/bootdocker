@@ -1,3 +1,5 @@
+#!/bin/bash
+
 appName="springboot-docker-quick"
 word="1"
 echo "$word"
@@ -17,5 +19,5 @@ then
     /usr/bin/docker stop "$word"
     /usr/bin/docker rm "$word"
 fi
-/var/maven_home/bin/mvn clean package -P spring-boot docker:build
+ mvn clean package -P spring-boot docker:build
 /usr/bin/docker run -p 8761:8761 -d --name "$appName" "$appName":latest
