@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.rf</groupId>
-    <artifactId>springboot-docker-quick</artifactId>
+    <artifactId>springcloud-docker-test</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot-docker-quick</name>
+    <name>springcloud-docker-test</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -51,7 +51,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>springboot-docker-quick</finalName>
+        <finalName>springcloud-docker-test</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
