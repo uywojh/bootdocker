@@ -1,9 +1,22 @@
-server:
-  port: 8661
 spring:
   application:
     name: boot-hello-service
+---
+server:
+  port: 8661
+spring:
+  profiles: test-server1
 eureka:
   client:
     serviceUrl:
       defaultZone: http://172.16.246.128:8761/eureka,http://172.16.246.128:8762/eureka,http://172.16.246.128:8763/eureka
+
+  ---
+  server:
+    port: 8662
+  spring:
+    profiles: test-server2
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://172.16.246.128:8761/eureka,http://172.16.246.128:8762/eureka,http://172.16.246.128:8763/eureka
