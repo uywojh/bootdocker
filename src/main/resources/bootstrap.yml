@@ -7,6 +7,8 @@ server:
 spring:
   profiles: test-server1
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     serviceUrl:
       defaultZone: http://172.16.246.128:8761/eureka,http://172.16.246.128:8762/eureka,http://172.16.246.128:8763/eureka
