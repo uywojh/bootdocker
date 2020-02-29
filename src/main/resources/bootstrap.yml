@@ -8,9 +8,9 @@ spring:
   profiles: test-server1
 eureka:
   instance:
-    hostname: 172.16.246.128        #Eureka实例的主机名
+    hostname: boot-hello-service        #Eureka实例的主机名
     prefer-ip-address: true
-    instance-id: boot-hello-service
+    instance-id: 172.16.246.128:8661
   client:
     serviceUrl:
       defaultZone: http://172.16.246.128:8761/eureka,http://172.16.246.128:8762/eureka
@@ -21,9 +21,9 @@ eureka:
     profiles: test-server2
   eureka:
     instance:
-      hostname: 172.16.246.128        #Eureka实例的主机名
+      hostname: boot-hello-service        #Eureka实例的主机名
       prefer-ip-address: true
-      instance-id: boot-hello-service
+      instance-id: 172.16.246.128:8662
     client:
       serviceUrl:
         defaultZone: http://172.16.246.128:8761/eureka,http://172.16.246.128:8762/eureka
