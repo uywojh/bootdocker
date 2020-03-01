@@ -36,7 +36,7 @@ public class reptileController {
             //将String类型的html转换为Document
             Document doc = ParseHtml.parseHtml(requesetUrlAndTag.getUrl());
             //获取所有class为pl2的元素，即包含所有<a>的div
-            Elements nodes = doc.select(requesetUrlAndTag.getElementId());
+            Elements nodes = doc.getElementsByClass(requesetUrlAndTag.getElementId());
             JsonResult.success(nodes.text());
         } catch (Exception e) {
             e.printStackTrace();
