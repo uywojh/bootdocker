@@ -36,12 +36,10 @@ public class reptileController {
             if (StringUtils.isEmpty(requesetUrlAndTag.getElementId())) {
                 logger.error("请输入需要抓取地址的标签");
             }
-            //将String类型的html转换为Document
             Document doc = ParseHtml.parseHtml(requesetUrlAndTag.getUrl());
-            //获取所有class为pl2的元素，即包含所有<a>的div
-            Elements nodes = doc.select(requesetUrlAndTag.getElementId());
-            logger.info("解析的结果--------nodes.text():" + nodes.html());
-            return JsonResult.success(nodes.text());
+            Elements nodes = doc.getElementsByClass(requesetUrlAndTag.getElementId());
+            logger.info("解析的结果--------nodes.text():"+nodes.toString());
+            return JsonResult.success(nodes.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
