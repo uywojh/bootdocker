@@ -5,6 +5,7 @@ import com.rf.springboot.response.JsonResult;
 import com.rf.springboot.util.ParseHtml;
 import org.apache.commons.lang.StringUtils;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,7 +40,7 @@ public class reptileController {
             Document doc = ParseHtml.parseHtml(requesetUrlAndTag.getUrl());
             //获取所有class为pl2的元素，即包含所有<a>的div
             Elements nodes = doc.select(requesetUrlAndTag.getElementId());
-            logger.info("解析的结果--------nodes.text():" + nodes.text());
+            logger.info("解析的结果--------nodes.text():" + nodes.html());
             return JsonResult.success(nodes.text());
         } catch (Exception e) {
             e.printStackTrace();
