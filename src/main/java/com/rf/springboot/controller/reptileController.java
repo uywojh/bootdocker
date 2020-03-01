@@ -33,6 +33,9 @@ public class reptileController {
             if (StringUtils.isEmpty(requesetUrlAndTag.getUrl())) {
                 logger.error("请输入需要抓取的地址");
             }
+            if (StringUtils.isEmpty(requesetUrlAndTag.getElementId())) {
+                logger.error("请输入需要抓取地址的标签");
+            }
             //将String类型的html转换为Document
             Document doc = ParseHtml.parseHtml(requesetUrlAndTag.getUrl());
             //获取所有class为pl2的元素，即包含所有<a>的div
