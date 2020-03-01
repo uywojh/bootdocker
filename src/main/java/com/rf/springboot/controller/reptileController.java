@@ -28,7 +28,6 @@ public class reptileController {
 
     @PostMapping("/getDocumentByTag")
     public JsonResult getDocumentByTag(@RequestBody @Valid RequesetUrlAndTag requesetUrlAndTag) {
-
         try {
             if (StringUtils.isEmpty(requesetUrlAndTag.getUrl())) {
                 logger.error("请输入需要抓取的地址");
@@ -39,13 +38,12 @@ public class reptileController {
             //将String类型的html转换为Document
             Document doc = ParseHtml.parseHtml(requesetUrlAndTag.getUrl());
             //获取所有class为pl2的元素，即包含所有<a>的div
-            Elements nodes = doc.getElementsByClass(requesetUrlAndTag.getElementId());
-            logger.info("解析的结果--------nodes.text():"+nodes.text());
-            JsonResult.success(nodes.text());
+            Elements nodes = doc.select(requesetUrlAndTag.getElementId());
+            logger.info("解析的结果--------nodes.text():" + nodes.text());
+            return JsonResult.success(nodes.text());
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return JsonResult.success();
     }
 
