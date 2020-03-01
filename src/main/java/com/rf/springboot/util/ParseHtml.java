@@ -33,7 +33,7 @@ public class ParseHtml {
             if(response != null && response.getStatusLine().getStatusCode() == HttpStatus.SC_OK){
                 HttpEntity entity = response.getEntity();
                 html = EntityUtils.toString(entity);
-//                logger.info("解析的结果--------html:"+html);
+                logger.info("解析的结果--------html:"+html);
                 return Jsoup.parse(html);
             }
         } catch (IOException e) {

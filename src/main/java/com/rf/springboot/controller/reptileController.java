@@ -27,7 +27,7 @@ public class reptileController {
     public static final Logger logger = LoggerFactory.getLogger(reptileController.class);
 
     @PostMapping("/getDocumentByTag")
-    public JsonResult sign(@RequestBody @Valid RequesetUrlAndTag requesetUrlAndTag) {
+    public JsonResult getDocumentByTag(@RequestBody @Valid RequesetUrlAndTag requesetUrlAndTag) {
 
         try {
             if (StringUtils.isEmpty(requesetUrlAndTag.getUrl())) {
@@ -44,6 +44,5 @@ public class reptileController {
 
         return JsonResult.success();
     }
-
 
 }
